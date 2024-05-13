@@ -1,9 +1,9 @@
-const LoadMoreBtn = ({ onLoadMore, hasMoreItems }) => {
-  const handleClick = () => {
-    onLoadMore();
-  };
-
-  return hasMoreItems && <button onClick={handleClick}>Load more</button>;
+const LoadMoreBtn = ({ onClick, loading }) => {
+  return (
+    <button onClick={onClick} disabled={loading}>
+      {loading ? "Loading..." : "Load More"}
+    </button>
+  );
 };
 
 export default LoadMoreBtn;
