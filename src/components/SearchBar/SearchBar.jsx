@@ -1,18 +1,24 @@
 import toast from "react-hot-toast";
+import { useState } from "react"; // Імпортуємо useState
 
 const SearchForm = ({ onSearch }) => {
+  const [topic, setTopic] = useState(""); // Додано стан для збереження значення пошукового запиту
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const form = evt.target;
-    const topic = form.elements.topic.value;
 
-    if (form.elements.topic.value.trim() === "") {
+    if (topic.trim() === "") {
       toast.error("Please enter a search term!");
       return;
     }
 
     onSearch(topic);
     form.reset();
+  };
+
+  const handleChange = (evt) => {
+    setTopic(evt.target.value); // Оновлюємо значення пошукового запиту при зміні введеного тексту
   };
 
   return (
@@ -24,6 +30,8 @@ const SearchForm = ({ onSearch }) => {
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
+          value={topic} // Встановлюємо значення input згідно зі станом
+          onChange={handleChange} // Додаємо обробник події для оновлення стану при введенні тексту
         />
         <button type="submit">Search</button>
       </form>
