@@ -1,13 +1,19 @@
 import ImageCard from "../ImageCard/ImageCard";
+import css from "./ImageGallery.module.css";
 
-const ArticleList = ({ items, onImageClick }) => (
-  <ul>
+const ImageGallery = ({ items, onImageClick }) => (
+  <ul className={css["image-gallery"]}>
     {items.map(({ id, urls, slug }) => (
       <li key={id}>
-        <ImageCard imgUrl={urls.small} imgDescr={slug} onClick={onImageClick} />
+        <ImageCard
+          className={css["image-card"]}
+          imgUrl={urls.small}
+          imgDescr={slug}
+          onClick={onImageClick}
+        />
       </li>
     ))}
   </ul>
 );
 
-export default ArticleList;
+export default ImageGallery;

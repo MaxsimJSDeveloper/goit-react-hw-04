@@ -1,0 +1,27 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  font: 500 16px / 1.5 "Montserrat", sans-serif;
+  margin: 0 auto;
+}

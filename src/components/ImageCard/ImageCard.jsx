@@ -1,11 +1,13 @@
+import css from "./ImageCard.module.css";
+
 const ImageCard = ({ imgUrl, imgDescr, onClick }) => {
   const handleClick = () => {
     onClick(imgUrl);
   };
 
   return (
-    <div onClick={handleClick}>
-      <img src={imgUrl} alt={imgDescr} width={450} height={270} />
+    <div className={css["image-card"]} onClick={handleClick}>
+      <img src={imgUrl} alt={imgDescr} />
     </div>
   );
 };

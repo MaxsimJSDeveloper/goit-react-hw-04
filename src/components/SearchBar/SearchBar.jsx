@@ -1,8 +1,9 @@
 import toast from "react-hot-toast";
-import { useState } from "react"; // Імпортуємо useState
+import { useState } from "react";
+import css from "./SearchBar.module.css";
 
 const SearchForm = ({ onSearch }) => {
-  const [topic, setTopic] = useState(""); // Додано стан для збереження значення пошукового запиту
+  const [topic, setTopic] = useState("");
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -18,22 +19,25 @@ const SearchForm = ({ onSearch }) => {
   };
 
   const handleChange = (evt) => {
-    setTopic(evt.target.value); // Оновлюємо значення пошукового запиту при зміні введеного тексту
+    setTopic(evt.target.value);
   };
 
   return (
-    <header>
-      <form onSubmit={handleSubmit}>
+    <header className={css.header}>
+      <form onSubmit={handleSubmit} className={css["form-container"]}>
         <input
           name="topic"
           type="text"
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
-          value={topic} // Встановлюємо значення input згідно зі станом
-          onChange={handleChange} // Додаємо обробник події для оновлення стану при введенні тексту
+          value={topic}
+          onChange={handleChange}
+          className={css["search-input"]}
         />
-        <button type="submit">Search</button>
+        <button type="submit" className={css["search-btn"]}>
+          Search
+        </button>
       </form>
     </header>
   );

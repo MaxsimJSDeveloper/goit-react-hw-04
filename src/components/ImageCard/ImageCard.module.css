@@ -1,0 +1,20 @@
+/* ImageCard.module.css */
+
+.image-card {
+  width: 450px; /* Фіксована ширина */
+  height: 300px; /* Фіксована висота */
+  overflow: hidden; /* Обрізаємо зображення, якщо вони виходять за межі блоку */
+  display: flex;
+  justify-content: center;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.image-card:hover img {
+  transform: scale(1.1);
+}

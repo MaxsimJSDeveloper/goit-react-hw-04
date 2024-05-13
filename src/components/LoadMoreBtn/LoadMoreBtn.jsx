@@ -1,8 +1,16 @@
+import css from "./LoadMoreBtn.module.css";
+
 const LoadMoreBtn = ({ onClick, loading }) => {
   return (
-    <button onClick={onClick} disabled={loading}>
-      {loading ? "Loading..." : "Load More"}
-    </button>
+    <div className={css.center}>
+      <button
+        onClick={onClick}
+        disabled={loading}
+        className={css["load-more-btn"]}
+      >
+        {loading ? "Loading..." : "Load More"}
+      </button>
+    </div>
   );
 };
 
