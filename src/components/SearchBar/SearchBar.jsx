@@ -30,7 +30,7 @@ const SearchForm = ({ onSearch }) => {
           type="text"
           autoComplete="off"
           autoFocus
-          placeholder="Search images and photos"
+          placeholder="Search images..."
           value={topic}
           onChange={handleChange}
           className={css["search-input"]}

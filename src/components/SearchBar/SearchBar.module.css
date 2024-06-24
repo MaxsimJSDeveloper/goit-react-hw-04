@@ -17,6 +17,7 @@
   margin-right: 10px;
   font-size: 16px;
   outline: none;
+  width: 300px;
 }
 
 .search-input:focus {
