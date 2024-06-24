@@ -8,6 +8,7 @@ import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import { Toaster } from "react-hot-toast";
+import ScrollButton from "./components/ScrollButton/ScrollButton";
 
 const App = () => {
   const [articles, setArticles] = useState([]);
@@ -22,6 +23,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
+        setError(false);
         const data = await fetchArticlesWithTopic(query, page);
         if (page === 1) {
           setArticles(data);
@@ -63,6 +65,7 @@ const App = () => {
   return (
     <>
       <SearchForm onSearch={handleSearch} />
+      <ScrollButton />
       {loading && <Loader />}
       {error && <Error />}
       {articles.length > 0 && (

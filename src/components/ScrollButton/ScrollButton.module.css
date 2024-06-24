@@ -1,0 +1,16 @@
+/* ScrollButton.module.css */
+.btn {
+  position: fixed;
+  bottom: 20px;
+  right: 7px;
+  background: transparent;
+  border: none;
+  z-index: 100;
+}
+
+.icon {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  fill: #2247eec6;
+}
